@@ -12,50 +12,162 @@ body, html {
     line-height: 2em;
 }
 
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: rgb(25, 43, 66);
+    margin: 0px 0px 10px;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+}
+
+p {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+p > a {
+    color: #A1C6FF;
+}
+
+a:hover {
+    color: #87B7FF;
+}
+
+ul li a,
+a, ul li {
+    list-style-type: none;
+    text-decoration: none;
+    color: rgba(7, 20, 28, 0.9);
+}
+
 .page-wrapper {
-    
     position: relative;
 }
 
 #zen-intro {
-    background: url('img/4k-wallpaper-adventure-climb-691668.jpg')
+    background: url('img/aerial-photography-altitude-bird-s-eye-view-2832022.jpg')
         no-repeat center center;
     background-size: cover;
     display: grid;
     grid-template-areas: 
     "header"
-    "summary"
-    "preamble";
-    grid-template-rows: repeat(3, 50%);
+    "summary";
+    grid-template-rows: repeat(2, 50%);
     grid-template-columns: 1fr 1fr;
     height: 100vh;
+    padding: 0 12em;
 }
 
-.header {
+
+header {
     grid-area: header;
 }
 
 .summary {
     grid-area: summary;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    
+    flex-direction: column;
+    position: relative;
+}
+
+.summary p:nth-child(2) {
+    background-color: #07141C;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 125%;
+    padding: 15px 25px;
+    margin: 0;
 }
 
 .preamble {
     grid-area: preamble;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 7em;
+}
+
+.preamble h3 { 
+    /* grid-area: preamble-title; */
+    grid-row: 1;
+    grid-column: 1/3;
 }
 
 .main {
+    background: url('img/black-and-white-clouds-cold-2086620.jpg')
+        no-repeat center center;
+    background-size: cover;
     display: grid;
     grid-template-areas: 
+    "preamble"
     "explanation"
     "participation"
     "benefits"
-    "requirements";
-    
-    grid-template-rows: repeat(4, 30%);
+    "requirements"
+    "footer";
     height: 100%;
+    padding: 0 12em;
+    position: relative;
 }
 
-.explanation { grid-area: "explanation"; }
-.participation { grid-area: "participation"; }
-.benefits { grid-area: "benefits"; }
-.requirements { grid-area: "requirements"; }
+
+.explanation { grid-area: explanation; }
+.participation { grid-area: participation; }
+.benefits { grid-area: benefits; }
+.requirements { grid-area: requirements; }
+footer { grid-area: footer; }
+.design-selection { grid-area: selection; }
+.design-archives { grid-area: archives; }
+.zen-resources { grid-area: resources; }    
+
+.sidebar .wrapper {
+    background: /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+        rgba(240, 241, 246, 0.9), 
+        rgba(31, 31, 31, 0.05) 
+    ),
+    /* bottom, image */
+    url(img/altitude-clouds-cold.png);
+    background-size: cover;
+    display: grid;
+    grid-template-areas: 
+    "selection archives resources";
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 15px;
+    padding: 30px 12em;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Footer */
+footer {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+footer::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    background-color: rgb(168, 178, 209);
+    margin: 0px auto;
+}
+
+footer a{
+    color: rgb(0, 0, 0);
+    padding: 10px 15px; 
+    text-align: center;
+}
